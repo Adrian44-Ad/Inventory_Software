@@ -9,11 +9,13 @@ def add_product(inventory, name, price, quantity):
         if product["name"].lower() == name.lower():
             return False
         
-        product = {
-            "name"  : name,
-            "price" : price,
-            "quantity"  : quantity
-        }
+    products = {
+        "name"  : name,
+        "price" : price,
+        "quantity"  : quantity
+    }
+
+    inventory.append(products)
 
     return True
 

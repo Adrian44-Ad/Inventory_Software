@@ -28,7 +28,7 @@ def save_CSV (inventory, path, include_header = True):
         
     except PermissionError:
         print("Error: You do not have permission to write to this path...")
-        return True
+        return False
     
     except Exception as ex:
         print("Unexpected error while saving: ", ex)
@@ -42,7 +42,7 @@ def load_CSV (path):
     errors = 0
 
     try:
-        with open() as file:
+        with open(path, "r", newline="", encoding="utf-8") as file:
             reader = csv.reader(file)
 
             try:
